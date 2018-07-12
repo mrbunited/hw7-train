@@ -45,35 +45,23 @@ $("#run-submit").on("click", function (event) {
     database.ref().on("child_added", function (snapshot) {
 
         // moment.js calcualtions 
-        var tFrequency = (snapshot.val().freqVar);
-console.log(tFrequency);
-        // Time is 3:30 AM
+        var newFreqVar = (snapshot.val().freqVar);
         var firstTime = (snapshot.val().startVar);
-    
-        // First Time (pushed back 1 year to make sure it comes before current time)
+
         var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
-        console.log(firstTimeConverted);
-   
+
         // Current Time
         var currentTime = moment();
         console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
-    
-        // Difference between the times
         var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
         console.log("DIFFERENCE IN TIME: " + diffTime);
-    
-        // Time apart (remainder)
-        var tRemainder = diffTime % tFrequency;
+        var tRemainder = diffTime % newFreqVar;
         console.log(tRemainder);
-    
-        // Minute Until Train
-        var awayVar = tFrequency - tRemainder;
+        var awayVar = newFreqVar - tRemainder;
         console.log("MINUTES TILL TRAIN: " + awayVar);
-    
-        // Next Train
-        var nextVar = moment().add(awayVar, "minutes");
-        console.log("ARRIVAL TIME: " + moment(nextVar).format("HH:mm"));
-    
+        var nextVar = moment().add(awayVar, "minutes").format("HH:mm");
+        console.log("ARRIVAL TIME: " + moment(nextVar));
+//   display in new row
         var nextRow = "<tr><td>" + (snapshot.val().nameVar) + "</td><td>" + (snapshot.val().destVar) + "</td><td>"  + (snapshot.val().freqVar) + "</td><td>" + nextVar + "</td><td>" + awayVar + "</td></tr>";
         
         $("table tbody").prepend(nextRow);

@@ -57,22 +57,23 @@
               <form role="form">
                 <div class="form-group">
                   <label for="submit">Train Name</label>
-                  <input type="text" class="form-control" id="submit-name">
+                  <input type="text" class="form-control" id="submit-name" pattern="[A-Za-z]" required>
                 </div>
   
                 <div class="form-group">
                     <label for="start-year"> Destination</label>
-                    <input type="text" class="form-control" id="submit-dest">
+                    <input type="text" class="form-control" id="submit-dest" pattern="[A-Za-z]" required>
                   </div>
 
                 <div class="form-group">
                   <label for="start-year">First Train Time</label>
-                  <input type="text" class="form-control" id="submit-first">
+                  <input class="form-control" id="submit-first" type="number" name="appt-time" pattern="([0-2]|[0-9]):([0-5][0-9])"
+                  required>
                 </div>
-
+ <!-- min="00:00" max="23:59" -->
                 <div class="form-group">
                   <label for="end-year">Frequency (min)</label>
-                  <input type="text" class="form-control" id="submit-freq">
+                  <input type="number" class="form-control" id="submit-freq" pattern="[0-59]{2}" required>
                 </div>
   
                 <!-- Here we have our final submit button -->
