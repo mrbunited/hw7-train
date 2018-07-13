@@ -5,7 +5,7 @@ body{
     background-image: url("../img/image.jpg");
     color: white;
     font-family: 'Frijole', cursive;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -20,7 +20,7 @@ body{
         color: white;
     }
 
-  .text-center{
+  #footer{
     color: white;
-    font-size: 40px;
+    font-size: 20px;
   }
