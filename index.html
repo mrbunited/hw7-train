@@ -5,116 +5,116 @@
   <meta charset="utf-8">
   <title>Train Schedule</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
 
 <body>
 
-    <!-- Main Bootstrap Search -->
-    <div class="container">
-  
-      <!-- Jumbotron for Title -->
-      <div class="jumbotron" style="background-color: #20315A ; color: white;">
-        <h1 class="text-center">
-          <strong>
-            <i class="fa fa-newspaper-o"></i> Current Train Schedule</strong>
-        </h1>
-       
-      </div>
-      <div id="clock" class="clock">loading ...</div>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Train Name</th>
-            <th scope="col">Destination</th>
-            <th scope="col">Frequency (min)</th>
-            <th scope="col">Next Arrival</th>
-            <th scope="col">Minutes Away </th>
-          </tr>
-        </thead>
-        <tbody id="mytable">
-            <tr>
-              <th id="name-display"></th>
-              <td id="dest-display"></td>
-              <td id="freq-display"></td>
-              <td id="next-display"></td>
-              <td id="away-display"></td>
-            </tr>
-        </tbody>
-      </table>
+  <!-- Main Bootstrap Search -->
+  <div class="container">
 
-      <div class="row">
-        <div class="col-sm-12">
-          <br>
-          <div class="card">
-            <div class="card-header">
-              <strong>
-                <i class="fa fa-list-alt"></i> Add Train</strong>
-            </div>
-            <div class="card-body">
+    <!-- Jumbotron for Title -->
+    <div class="jumbotron" style="background-color: #20315A ; opacity: 0.6;">
+      <h1 class="text-center">
+        <strong>
+          <i class="fa fa-newspaper-o"></i> Current Train Schedule</strong>
+      </h1>
 
-              <form role="form">
-                <div class="form-group">
-                  <label for="submit">Train Name</label>
-                  <input type="text" class="form-control" id="submit-name" pattern="[A-Za-z]" size="20" >
-                </div>
-  
-                <div class="form-group">
-                    <label for="start-year"> Destination</label>
-                    <input type="text" class="form-control" id="submit-dest" pattern="[A-Za-z]" size="20" >
-                  </div>
+    </div>
+    <div id="clock" class="clock">loading ...</div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Train Name</th>
+          <th scope="col">Destination</th>
+          <th scope="col">Frequency (min)</th>
+          <th scope="col">Next Arrival</th>
+          <th scope="col">Minutes Away </th>
+        </tr>
+      </thead>
+      <tbody id="mytable">
+        <tr>
+          <th id="name-display"></th>
+          <td id="dest-display"></td>
+          <td id="freq-display"></td>
+          <td id="next-display"></td>
+          <td id="away-display"></td>
+        </tr>
+      </tbody>
+    </table>
 
-                <div class="form-group">
-                  <label for="start-year">First Train Time</label>
-                  <input class="form-control" id="submit-first" type="number" name="appt-time" 
-                  >
-                </div>
- <!-- min="00:00" max="23:59" -->
-                <div class="form-group">
-                  <label for="end-year">Frequency (min)</label>
-                  <input type="number" class="form-control" id="submit-freq" >
-                </div>
-  
-                <!-- Here we have our final submit button -->
-                <button type="submit" class="btn btn-primary" id="run-submit">
-                  <i class="fa fa-submit"></i> Submit</button>
-                  <button type="update" class="btn btn-warning" id="run-update">
-                    <i class="fa fa-submit"></i> Update</button>
-                    <button type="delete" class="btn btn-danger" id="run-delete">
-                        <i class="fa fa-submit"></i> Delete</button>
-              </form>
-            </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <br>
+        <div class="card">
+          <div class="card-header">
+            <strong>
+              <i class="fa fa-list-alt"></i> Add Train</strong>
+          </div>
+          <div class="card-body">
+
+            <form role="form">
+              <div class="form-group">
+                <label for="submit">Train Name</label>
+                <input type="text" class="form-control" id="submit-name" pattern="[A-Za-z]" size="20">
+              </div>
+
+              <div class="form-group">
+                <label for="start-year"> Destination</label>
+                <input type="text" class="form-control" id="submit-dest" pattern="[A-Za-z]" size="20">
+              </div>
+
+              <div class="form-group">
+                <label for="start-year">First Train Time</label>
+                <input class="form-control" id="submit-first" type="number" name="appt-time">
+              </div>
+              <!-- min="00:00" max="23:59" -->
+              <div class="form-group">
+                <label for="end-year">Frequency (min)</label>
+                <input type="number" class="form-control" id="submit-freq">
+              </div>
+
+              <!-- Here we have our final submit button -->
+              <button type="submit" class="btn btn-primary" id="run-submit">
+                <i class="fa fa-submit"></i> Submit</button>
+              <button type="update" class="btn btn-warning" id="run-update">
+                <i class="fa fa-submit"></i> Update</button>
+              <button type="delete" class="btn btn-danger" id="run-delete">
+                <i class="fa fa-submit"></i> Delete</button>
+            </form>
           </div>
         </div>
       </div>
-  
-
-  
-      <!-- Footer Region -->
-      <div class="row">
-        <div class="col-sm-12">
-  
-          <!-- Line Break followed by closing -->
-          <hr>
-          <h5 class="text-center">
-            <small>Made with lots and lots of
-              <i class="fa fa-heart"></i>
-            </small>
-          </h5>
-  
-        </div>
-      </div>
-  
     </div>
-  
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.1/jquery.fittext.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+    <!-- Footer Region -->
+    <div class="row">
+      <div class="col-sm-12">
+
+        <!-- Line Break followed by closing -->
+        <hr>
+        <h5 class="text-center">
+          <small>Made with lots and lots of
+            <i class="fa fa-heart"></i>
+          </small>
+        </h5>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.1/jquery.fittext.min.js"></script>
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
   </div>
 </body>
 
